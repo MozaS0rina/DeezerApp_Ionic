@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Album Songs</ion-title>
+    <ion-buttons slot="start">
+    
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshSongs($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="loading" class="loading-container">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-box">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <ion-list *ngIf="songs && songs.length > 0">
+    <ion-item *ngFor="let song of songs" [routerLink]="['/play-music', song.id]"(click)="showDetails(song.id)">
+      <ion-thumbnail slot="start">
+        <img src="assets/icon/song.jpg" alt="Song Image">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ song.title }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="!loading  && !errorMessage" class="no-data">
+    <p>No songs found for this album.</p>
+  </div>
+</ion-content>
+

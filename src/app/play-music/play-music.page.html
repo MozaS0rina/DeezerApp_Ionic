@@ -1,0 +1,33 @@
+<ion-header>
+<ion-toolbar>
+  <ion-title>Play Music</ion-title>
+  <ion-buttons slot="start">
+  
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-refresher slot="fixed" (ionRefresh)="refreshSongs($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+<div *ngIf="song" class="song-container">
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size="18" class="text-center">
+        <img src="assets/icon/songplay.jpg" alt="Album Image" class="album-image">
+        <h2 class="song-title">{{ song.title }}</h2>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button class = "button_play"(click)="playMusic()">
+    {{ isPlaying ? 'Pause' : 'Play' }}
+  </ion-button>
+ 
+</div>
+</ion-content>

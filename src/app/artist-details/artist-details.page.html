@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Artist Albums</ion-title>
+    <ion-buttons slot="start">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshAlbums($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="loading" class="loading-container">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-box">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <ion-list *ngIf="albums && albums.length > 0">
+    <ion-item *ngFor="let album of albums" [routerLink]="['/album-detail', album.id]"(click)="showDetails(album.id)">
+      <ion-thumbnail slot="start" >
+        <img [src]="album.cover" alt="Album Image">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ album.title }}</h2>
+        
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="!loading  && !errorMessage" class="no-data">
+    <p>No albums found for this artist.</p>
+  </div>
+</ion-content>

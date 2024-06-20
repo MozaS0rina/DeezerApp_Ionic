@@ -1,0 +1,30 @@
+.song-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .album-image {
+    width: 67%; /* Adjust according to your preference */
+    height: auto;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10%;
+
+  }
+  .image-box {
+    border: 2px solid black; /* Adjust border properties as needed */
+    border-radius: 10px; /* Adjust border radius for rounded corners */
+    overflow: hidden; /* Ensure the image stays within the box */
+  }
+  
+  .song-title, .song-artist {
+    margin: 0;
+  }
+  .button_play {
+    align-items: center;
+    margin: 10%;
+  }

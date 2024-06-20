@@ -1,0 +1,53 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.error-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: red;
+  text-align: center;
+  padding: 16px;
+
+  ion-icon {
+    margin-right: 8px;
+  }
+}
+
+.genre-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+}
+.settings-button {
+  margin-left: 2% ;
+  margin-right: 2%
+}
+
+ion-avatar {
+  width: 100%;
+  height: auto;
+}
+
+ion-avatar img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.genre-label {
+  font-size: 16px;
+  margin-top: 8px;
+  text-align: center;
+  display: block; /* Ensure it behaves as a block element */
+  width: 100%; /* Ensure it takes full width */
+}

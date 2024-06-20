@@ -1,0 +1,14 @@
+{
+  "name": "DeezerApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "ssl": true,  
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://deezerdevs-deezer.p.rapidapi.com/"
+    }
+  ]
+}
