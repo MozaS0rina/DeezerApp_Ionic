@@ -2,6 +2,7 @@
 DeezerApp is a mobile application built with Ionic and Capacitor that allows users to explore and enjoy music from the Deezer API. The application utilizes a proxy server to handle API requests, ensuring smooth and secure communication with the Deezer API. The project is in the master branch
 
 Features
+
 Home Page: Welcome page that provides quick access to various features of the app.
 Music Genres: Browse through different music genres available on Deezer.
 Artists: Search and view artists by genre or name.
@@ -10,7 +11,7 @@ Album Details: Explore albums and their tracks.
 Play Music: Listen to tracks with an integrated music player.
 Settings: Customize application settings according to user preferences.
 
-Technologies Used
+Technologies Used:
 Ionic: Framework for building cross-platform mobile applications.
 Capacitor: Cross-platform runtime for building web applications.
 Angular: Platform for building mobile and desktop web applications.
